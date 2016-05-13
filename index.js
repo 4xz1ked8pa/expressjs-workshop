@@ -5,9 +5,10 @@ app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 
-
-
-
+// This creates a web server that can listen to /hello and respond with some html.
+app.get('/hello', function(request, respond) {
+  respond.send('<h1>Hello world!</h1>');
+});
 
 /* YOU DON'T HAVE TO CHANGE ANYTHING BELOW THIS LINE :) */
 

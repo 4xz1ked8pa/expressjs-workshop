@@ -78,13 +78,22 @@ app.post('/createContent', function(req, res) {
       res.status(500).send(err);
     }
     else {
-      res.send(post);
+      res.redirect(`/posts/${post.postId}`);
     }
   });
 });
 
 // This creates a web server that can listen to requests for /posts/postId
-
+app.get('/posts/:postId', function(req, res) {
+  redditAPI.getSinglePost(req.params.postId, function(err, post) {
+    if (err) {
+      res.status(500).send(err);
+    }
+    else {
+      res.send(post);
+    }
+  });
+});
 
 
 

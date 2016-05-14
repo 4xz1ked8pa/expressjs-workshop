@@ -10,5 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "body-parser": "^1.15.1",
+    "mysql": "^2.10.2"
   }
 }

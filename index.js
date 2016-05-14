@@ -90,7 +90,7 @@ app.get('/posts/:postId', function(req, res) {
       res.status(500).send(err);
     }
     else {
-      res.send(post);
+      res.send(JSON.stringify(post));
     }
   });
 });

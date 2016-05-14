@@ -14,7 +14,7 @@ var connection = mysql.createConnection({
 
 var redditAPI = reddit(connection);
 
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded());
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
@@ -78,7 +78,7 @@ app.post('/createContent', function(req, res) {
       res.status(500).send(err);
     }
     else {
-      console.log(req.body);
+      res.send(post);
     }
   });
 });
